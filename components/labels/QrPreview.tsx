@@ -18,7 +18,7 @@ export function QrPreview({ value, label, size = 120, className }: QrPreviewProp
   useEffect(() => {
     let isMounted = true;
     QRCode.toDataURL(value, { width: size, margin: 1 })
-      .then((url) => {
+      .then((url: string) => {
         if (isMounted) {
           setDataUrl(url);
         }
